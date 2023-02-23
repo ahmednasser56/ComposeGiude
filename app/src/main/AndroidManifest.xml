@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeGiude"
         tools:targetApi="31">
+
         <activity
-            android:name=".bottom_navigation.BottomMenuActivity"
+            android:name=".search.SearchActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeGiude">
