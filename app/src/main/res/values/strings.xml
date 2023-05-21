@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ComposeGiude</string>
+
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="location">Location</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
 </resources>

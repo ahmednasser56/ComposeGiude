@@ -12,7 +12,7 @@ class ProfileActivity : AppCompatActivity() {
 
         setContent {
             ComposeGiudeTheme {
-                ProfileScreen()
+                ProfileVMScreen()
             }
         }
     }
