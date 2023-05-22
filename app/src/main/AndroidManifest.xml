@@ -17,7 +17,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".profile_screen.ProfileActivity"
+            android:name=".food_screen.FoodActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeGiude">
