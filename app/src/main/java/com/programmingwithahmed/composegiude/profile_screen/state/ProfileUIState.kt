@@ -6,4 +6,5 @@ data class ProfileUIState(
     val location: String = "",
     val email: String = "",
     val phone: String = "",
+    val profileImage: String = "https://via.placeholder.com/600/f66b97"
 )

@@ -64,7 +64,7 @@ private fun ProfileVMContent(
 
         ProfileHeader(title = "Account", subTitle = "Edit or manage your Account")
         Spacer(modifier = Modifier.height(32.dp))
-        ProfileAvatar(painter = painterResource(id = R.drawable.me))
+        ProfileOnlineAvatar(imageUrl = profileUIState.profileImage)
         Spacer(modifier = Modifier.height(24.dp))
         TextButton(text = "Change Profile Picture") {}
         Spacer(modifier = Modifier.height(32.dp))
