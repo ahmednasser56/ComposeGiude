@@ -1,5 +1,6 @@
 package com.programmingwithahmed.composegiude.food_screen
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,8 +29,9 @@ fun FoodScreen(
 }
 
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun FoodContent(foodUiState: FoodUIState, onMealClicked: (Meal)->Unit) {
+private fun FoodContent(foodUiState: FoodUIState, onMealClicked: (Meal) -> Unit) {
 
     LazyColumn(
         modifier = Modifier
@@ -40,8 +42,13 @@ private fun FoodContent(foodUiState: FoodUIState, onMealClicked: (Meal)->Unit) {
         item {
             Text(text = "Select Meal:")
         }
-        items(foodUiState.meals) {
-            MealItem(it, onItemClicked = onMealClicked)
+        items(
+            items = foodUiState.meals,
+            key = { currentMeal ->
+                currentMeal.name
+            }
+        ) {
+            MealItem(it, onItemClicked = onMealClicked, modifier = Modifier.animateItemPlacement())
         }
 
         item {
@@ -55,5 +62,5 @@ private fun FoodContent(foodUiState: FoodUIState, onMealClicked: (Meal)->Unit) {
 @Preview
 @Composable
 fun FoodContentPreview() {
-    FoodContent(FoodUIState()){}
+    FoodContent(FoodUIState()) {}
 }
