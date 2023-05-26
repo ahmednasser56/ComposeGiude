@@ -17,10 +17,10 @@ import com.programmingwithahmed.composegiude.ui.theme.PrimaryTextColor
 import com.programmingwithahmed.composegiude.ui.theme.Rubik
 
 @Composable
-fun MealItem(meal: Meal, onItemClicked: (Meal) -> Unit) {
+fun MealItem(meal: Meal, modifier: Modifier, onItemClicked: (Meal) -> Unit) {
 
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clickable {
                 onItemClicked(meal)
@@ -54,5 +54,5 @@ fun MealItem(meal: Meal, onItemClicked: (Meal) -> Unit) {
 @Preview
 @Composable
 fun MealItemPreview() {
-    MealItem(Meal(name = "Burger", "")){}
+    MealItem(Meal(name = "Burger", ""), Modifier){}
 }
