@@ -7,9 +7,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class CounterViewModel : ViewModel() {
+class CounterViewModel @Inject constructor() : ViewModel() {
 
     private val _counterState = MutableStateFlow(0)
     val counterState = _counterState.asStateFlow()
