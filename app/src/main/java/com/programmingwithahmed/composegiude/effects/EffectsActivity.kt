@@ -15,7 +15,7 @@ class EffectsActivity : AppCompatActivity() {
 
         setContent {
             ComposeGiudeTheme {
-                LaunchedEffectScreenPager()
+                LaunchedEffectScreenLazyColumn()
             }
         }
     }
