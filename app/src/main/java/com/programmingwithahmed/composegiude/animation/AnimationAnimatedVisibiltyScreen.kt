@@ -40,7 +40,7 @@ private fun AnimationAnimatedVisibilityContent() {
         Button(
             onClick = { imageVisibilityState = !imageVisibilityState }
         ) {
-            Text(text = "Toggle Button Visibility")
+            Text(text = "Click Me")
         }
 
         Spacer(modifier = Modifier.height(16.dp))

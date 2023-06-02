@@ -18,15 +18,14 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun AnimationNestedAnimatedVisibilityScreen() {
-    AnimationNestedAnimatedVisibilityContent()
+fun AnimationSizeContentScreen() {
+    AnimationSizeContentContent()
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
-private fun AnimationNestedAnimatedVisibilityContent() {
+private fun AnimationSizeContentContent() {
 
-    var imageVisibilityState by remember { mutableStateOf(true) }
+    var textState by remember { mutableStateOf("Hi") }
 
     Column(
         modifier = Modifier
@@ -37,18 +36,12 @@ private fun AnimationNestedAnimatedVisibilityContent() {
     ) {
 
         Button(
-            onClick = { imageVisibilityState = !imageVisibilityState }
+            onClick = { textState += " Hi" }
         ) {
             Text(text = "Click Me")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        AnimatedVisibility(
-            imageVisibilityState,
-            enter = fadeIn(),
-            exit = fadeOut()
-        ) {
 
             Box(
                 modifier = Modifier
@@ -57,19 +50,10 @@ private fun AnimationNestedAnimatedVisibilityContent() {
 
                     .padding(16.dp)
             ) {
-
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowUp,
-                    contentDescription = "Arrow Icon",
-                    modifier = Modifier
-                        .animateEnterExit(
-                            enter = slideInVertically { it*2 },
-                            exit = slideOutVertically { -it*2 }
-                        )
+                Text(text = textState,    modifier = Modifier
+                    .animateContentSize()
                 )
-
             }
-        }
 
     }
 }
