@@ -14,7 +14,7 @@ class AnimationActivity : AppCompatActivity() {
 
         setContent {
             ComposeGiudeTheme {
-                AnimationAnimatedVisibilityOffsetScreen()
+                AnimationNestedAnimatedVisibilityScreen()
             }
         }
     }
