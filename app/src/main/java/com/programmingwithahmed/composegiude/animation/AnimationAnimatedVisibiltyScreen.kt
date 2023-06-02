@@ -1,6 +1,6 @@
 package com.programmingwithahmed.composegiude.animation
 
-import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -23,6 +23,7 @@ fun AnimationAnimatedVisibilityScreen() {
     AnimationAnimatedVisibilityContent()
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimationAnimatedVisibilityContent() {
 
@@ -44,7 +45,10 @@ private fun AnimationAnimatedVisibilityContent() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        AnimatedVisibility(imageVisibilityState) {
+        AnimatedVisibility(imageVisibilityState,
+        enter = fadeIn() + scaleIn(),
+        exit = fadeOut() + scaleOut()
+        ) {
 
             Image(
                 painter = painterResource(id = R.drawable.me),
