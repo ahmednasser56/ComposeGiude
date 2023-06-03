@@ -22,12 +22,12 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun AnimationInfiniteTransitionScreen() {
-    AnimationInfiniteTransitionContent()
+fun AnimationInfiniteTransitionWithColorScreen() {
+    AnimationInfiniteTransitionWithColorContent()
 }
 
 @Composable
-private fun AnimationInfiniteTransitionContent() {
+private fun AnimationInfiniteTransitionWithColorContent() {
 
     val infiniteTransition = rememberInfiniteTransition()
     val color by infiniteTransition.animateColor(
