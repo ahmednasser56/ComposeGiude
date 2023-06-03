@@ -14,7 +14,7 @@ class AnimationActivity : AppCompatActivity() {
 
         setContent {
             ComposeGiudeTheme {
-                AnimationCrossFadeScreen()
+                AnimationAnimatedContentScreen()
             }
         }
     }
