@@ -74,10 +74,12 @@ dependencies {
     // Splash API
     //implementation 'androidx.core:core-splashscreen:1.1.0-alpha01'
 
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
 
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
 
     implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
     implementation "com.google.accompanist:accompanist-webview:$accompanist_version"
+    implementation "com.google.accompanist:accompanist-pager-indicators:$accompanist_version"
 }

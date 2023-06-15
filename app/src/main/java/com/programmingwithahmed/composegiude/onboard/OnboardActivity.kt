@@ -16,7 +16,7 @@ class OnboardActivity : AppCompatActivity() {
         setContent {
             ComposeGiudeTheme {
                 val navController = rememberNavController()
-                NavGraph(navController)
+                NavGraph(navController, "onboard")
             }
         }
     }
