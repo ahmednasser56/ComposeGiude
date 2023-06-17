@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import com.programmingwithahmed.composegiude.navigation.first.FirstScreen
 import com.programmingwithahmed.composegiude.navigation.second.route.secondRoute
 import com.programmingwithahmed.composegiude.navigation.third.ThirdScreen
+import com.programmingwithahmed.composegiude.onboard.home.route.homeRoute
 import com.programmingwithahmed.composegiude.onboard.onboard.route.onboardRoute
 
 @Composable
@@ -16,6 +17,7 @@ fun NavGraph(navHostController: NavHostController, start: String) {
 
         onboardRoute(navHostController)
 
+        homeRoute(navHostController)
 
     }
 

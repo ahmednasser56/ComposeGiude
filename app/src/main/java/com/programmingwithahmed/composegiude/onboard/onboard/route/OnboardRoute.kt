@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.programmingwithahmed.composegiude.onboard.onboard.view.Onboard
 
-private const val ROUTE = "onboard"
+const val ROUTE = "onboard"
 
 fun NavHostController.navigateToOnboard() {
     navigate(ROUTE)

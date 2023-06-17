@@ -6,4 +6,12 @@
 <!--        <item name="android:navigationBarColor">#F00</item>-->
     </style>
 
+
+    <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/first</item>
+        <item name="windowSplashScreenAnimationDuration">600</item>
+        <item name="postSplashScreenTheme">@style/Theme.ComposeGiude</item>
+    </style>
+
 </resources>
