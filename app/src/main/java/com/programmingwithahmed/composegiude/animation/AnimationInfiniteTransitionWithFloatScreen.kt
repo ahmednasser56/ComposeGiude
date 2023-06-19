@@ -25,7 +25,7 @@ private fun AnimationInfiniteTransitionWithFloatContent() {
         initialValue = 50f,
         targetValue = 200f,
         animationSpec = InfiniteRepeatableSpec(
-            tween(2000),
+            tween(1000),
             repeatMode = RepeatMode.Reverse
         )
     )
