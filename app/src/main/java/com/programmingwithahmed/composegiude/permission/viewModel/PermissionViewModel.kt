@@ -7,7 +7,7 @@ import android.graphics.Bitmap
 import androidx.activity.result.ActivityResult
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.programmingwithahmed.composegiude.GeneralUtility
+import com.programmingwithahmed.composegiude.utils.GeneralUtility
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*

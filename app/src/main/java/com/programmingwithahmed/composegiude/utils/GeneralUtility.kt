@@ -1,32 +1,13 @@
-package com.programmingwithahmed.composegiude
+package com.programmingwithahmed.composegiude.utils
 
 import android.Manifest
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.app.Dialog
 import android.content.*
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.pm.PackageManager
-import android.content.res.Resources
 import android.graphics.*
-import android.graphics.drawable.ColorDrawable
-import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
-import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.transition.platform.MaterialSharedAxis
-import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 class GeneralUtility {

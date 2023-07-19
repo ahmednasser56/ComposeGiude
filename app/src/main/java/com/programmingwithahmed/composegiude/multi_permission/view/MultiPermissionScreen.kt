@@ -1,4 +1,4 @@
-package com.programmingwithahmed.composegiude.permission.view
+package com.programmingwithahmed.composegiude.multi_permission.view
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,13 +30,13 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.programmingwithahmed.composegiude.R
+import com.programmingwithahmed.composegiude.multi_permission.viewModel.MultiPermissionViewModel
 import com.programmingwithahmed.composegiude.onboard.data.collectAsEffect
-import com.programmingwithahmed.composegiude.permission.viewModel.PermissionViewModel
 import com.programmingwithahmed.composegiude.widgets.BitmapImage
 
 @Composable
-fun PermissionScreen(
-    viewModel: PermissionViewModel = hiltViewModel()
+fun MultiPermissionScreen(
+    viewModel: MultiPermissionViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
 
@@ -44,7 +45,7 @@ fun PermissionScreen(
     val cameraLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
     ) {
-        viewModel.handleCameraResult(it)
+        viewModel.handleCameraResult(context, it)
     }
 
     val cameraPermissionLauncher =
@@ -60,7 +61,9 @@ fun PermissionScreen(
     }
 
     viewModel.openCamera.collectAsEffect {
-        cameraLauncher.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, it)
+        cameraLauncher.launch(cameraIntent)
     }
 
     viewModel.error.collectAsEffect {
@@ -68,14 +71,14 @@ fun PermissionScreen(
     }
     //endregion
 
-    PermissionContent(
+    MultiPermissionContent(
         imageBitmap = imageBitmap,
         onTakeImageButtonClicked = { viewModel.onTakeImageButtonClicked(context) }
     )
 }
 
 @Composable
-private fun PermissionContent(imageBitmap: Bitmap?, onTakeImageButtonClicked: () -> Unit) {
+private fun MultiPermissionContent(imageBitmap: Bitmap?, onTakeImageButtonClicked: () -> Unit) {
 
     Column(
         modifier = Modifier
@@ -90,14 +93,17 @@ private fun PermissionContent(imageBitmap: Bitmap?, onTakeImageButtonClicked: ()
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        BitmapImage(bitmap = imageBitmap, modifier = Modifier
-        .size(300.dp),)
+        BitmapImage(
+            bitmap = imageBitmap,
+            modifier = Modifier
+                .size(300.dp),
+        )
 
     }
 }
 
 @Preview
 @Composable
-fun PermissionPreview() {
-    PermissionContent(imageBitmap = null) {}
+fun MultiPermissionPreview() {
+    MultiPermissionContent(imageBitmap = null) {}
 }
