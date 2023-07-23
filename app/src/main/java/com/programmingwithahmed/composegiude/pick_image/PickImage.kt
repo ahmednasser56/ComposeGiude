@@ -60,7 +60,7 @@ fun PickImageScreen() {
         } else {
             Toast.makeText(context, "Error while selecting the image", Toast.LENGTH_SHORT).show()
         }
-    }
+    } 
 
     PickImageContent(
         context = context,
